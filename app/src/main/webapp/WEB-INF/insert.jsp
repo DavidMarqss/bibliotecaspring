@@ -8,7 +8,7 @@
     <body>
         <h1>Novo Livro</h1>
         <form action="/insert" method="post">
-            <input type="text" name="Titulo">
+            <input type="text" name="titulo">
             <button type="submit">Salvar</button>
         </form>
     </body>

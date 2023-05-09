@@ -12,28 +12,28 @@ import application.model.LivroRepository;
 
 @Controller
 public class LivroController {
-    
+
     @Autowired
     private LivroRepository livroRepo;
 
     @RequestMapping("/livro")
-    public String list(Model model){
+    public String list(Model model) {
         model.addAttribute("livros", livroRepo.findAll());
         return "WEB-INF/list.jsp";
     }
 
     @RequestMapping("/insert")
-    public String insert(){
+    public String insert() {
         return "WEB-INF/insert.jsp";
     }
-    
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public String insert(@RequestParam("titulo") String titulo){
+    public String insert(@RequestParam("titulo") String titulo) {
         Livro livro = new Livro();
         livro.setTitulo(titulo);
 
         livroRepo.save(livro);
-        
         return "redirect:/livro";
     }
+
 }
