@@ -3,12 +3,13 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Novo</title>
+        <title>Atualizar</title>
     </head>
     <body>
-        <h1>Novo Livro</h1>
-        <form action="/insert" method="post">
-            <input type="text" name="titulo"/>
+        <h1>Atualizar Livro</h1>
+        <form action="/update" method="patch">
+            <input type="hidden" name="id" value="${livro.id}"/>
+            <input type="text" name="titulo" value="${livro.titulo}"/>
             <button type="submit">Salvar</button>
         </form>
     </body>
