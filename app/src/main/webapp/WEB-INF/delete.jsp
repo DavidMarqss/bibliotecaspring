@@ -3,14 +3,14 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Atualizar</title>
+        <title>Delete</title>
     </head>
     <body>
-        <h1>Atualizar Livro</h1>
-        <form action="/update" method="post">
+        <h1>Delete</h1>
+        <h1>Deseja remover o livro "${livro.titulo}"?</h1>
+        <form action="/delete" method="post">
             <input type="hidden" name="id" value="${livro.id}"/>
-            <input type="text" name="titulo" value="${livro.titulo}"/>
-            <button type="submit">Salvar</button>
+            <button type="submit">Excluir</button>
         </form>
     </body>
 </html>
