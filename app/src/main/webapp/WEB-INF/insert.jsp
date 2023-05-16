@@ -15,6 +15,7 @@
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" class="form-control" />
                     <label for="isbn">Isbn</label>
+                    <input type="text" name="isbn" class="form-control">
                 </div>
                 <br />
                 <button type="submit" class="btn btn-success">Salvar</button>

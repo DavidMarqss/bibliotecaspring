@@ -15,6 +15,8 @@
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" class="form-control" value="${livro.titulo}"/>
+                    <label for="isbn">Isbn</label>
+                    <input type="text" name="isbn" class="form-control" value="${livro.isbn}"/>
                 </div>
                 <br />
                 <button type="submit">Salvar</button>
