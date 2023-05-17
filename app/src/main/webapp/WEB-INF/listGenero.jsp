@@ -4,13 +4,15 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Genero</title>
+        <title>Gênero</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="icon" href="../icons/genero.png" type="image/x-icon">
     </head>
     <body>
         <div class="container">
-            <h1>Generos de Livros</h1>
-            <a href="/add" class="btn btn-primary">Novo Genero</a>
+            <h1>Gêneros de Livros</h1>
+            <a href="/add" class="btn btn-primary">Novo Gênero</a>
+            <a href="/" class="btn btn-success">Home</a>
             <table class="table">
                 <tr>
                     <th>Id</th>

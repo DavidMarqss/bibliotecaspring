@@ -60,7 +60,7 @@ public class GeneroController {
         }
         genero.get().setNome(nome);
         generoRepo.save(genero.get());
-        return "redirect:/listGenero.jsp";
+        return "redirect:/genero";
     }
 
     @RequestMapping("/del")

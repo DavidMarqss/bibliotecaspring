@@ -6,11 +6,13 @@
         <meta charset="UTF-8" />
         <title>Livros</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="icon" href="../icons/livros.png" type="image/x-icon">
     </head>
     <body>
         <div class="container">
             <h1>Alguns Livros</h1>
             <a href="/insert" class="btn btn-primary">Novo Livro</a>
+            <a href="/" class="btn btn-success">Home</a>
             <table class="table">
                 <tr>
                     <th>Id</th>

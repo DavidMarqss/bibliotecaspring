@@ -16,7 +16,7 @@
             <input type="hidden" name="id" value="${genero.id}">
             <div class=form-group>
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" name="nomd" value="${genero.nome}">
+                <input type="text" class="form-control" name="nome" value="${genero.nome}">
             </div>
             <br />
             <button type="submit" class="btn btn-success">Atualizar</button>
