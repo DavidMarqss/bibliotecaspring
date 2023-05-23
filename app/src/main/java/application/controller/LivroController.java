@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import application.model.Genero;
+import application.model.GeneroRepository;
 import application.model.Livro;
 import application.model.LivroRepository;
 
@@ -19,6 +20,8 @@ public class LivroController {
 
     @Autowired
     private LivroRepository livroRepo;
+    @Autowired
+    private GeneroRepository generoRepo;
 
     @RequestMapping("/list")
     public String list(Model model) {
@@ -27,7 +30,8 @@ public class LivroController {
     }
 
     @RequestMapping("/insert")
-    public String insert() {
+    public String insert(Model model) {
+        model.addAttribute("generos", generoRepo.findAll());
         return "insert";
     }
 
@@ -72,7 +76,6 @@ public class LivroController {
 
         livro.get().setTitulo(titulo);
         livro.get().setIsbn(isbn);
-        livro.get().setGenero(genero);
 
         livroRepo.save(livro.get());
         return "redirect:/livro/list";

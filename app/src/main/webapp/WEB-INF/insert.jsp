@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -16,6 +17,14 @@
                     <input type="text" name="titulo" class="form-control" />
                     <label for="isbn">Isbn</label>
                     <input type="text" name="isbn" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="genero">Genero</label>
+                    <select class="form-control" name="genero">
+                        <c:forEach var="item" items="${generos}">
+                            <option>${item.nome}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <br />
                 <button type="submit" class="btn btn-success">Salvar</button>
