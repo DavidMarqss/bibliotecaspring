@@ -38,13 +38,11 @@ public class LivroController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(
         @RequestParam("titulo") String titulo,
-        @RequestParam("isbn") String isbn,
-        @RequestParam("genero") Genero genero
+        @RequestParam("isbn") String isbn
     ) {
         Livro livro = new Livro();
         livro.setTitulo(titulo);
         livro.setIsbn(isbn);
-        livro.setGenero(genero);
 
         livroRepo.save(livro);
 
