@@ -30,8 +30,8 @@
 <body>
     <h1>Crud com Spring</h1>
     <div class="btn-container">
-        <a class="btn btn-primary" href="/livro">Livros</a>
-        <a class="btn btn-success" href="/genero">Gêneros</a>
+        <a class="btn btn-primary" href="/livro/list">Livros</a>
+        <a class="btn btn-success" href="/genero/list">Gêneros</a>
     </div>
 </body>
 </html>
