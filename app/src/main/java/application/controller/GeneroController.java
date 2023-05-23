@@ -44,12 +44,14 @@ public class GeneroController {
     public String update(Model model,@RequestParam int id){
         Optional<Genero> genero = generoRepo.findById(id);
 
-        if(!genero.isPresent()){
-            return "redirect:/genero/list";
-        }
+        if(genero.isPresent()){
 
-        model.addAttribute("genero", genero.get());
-        return "updateGenero";
+            model.addAttribute("genero", genero.get());
+            return "updateGenero";
+        }
+        return "redirect:/genero/list";
+
+        
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
@@ -68,12 +70,14 @@ public class GeneroController {
     public String delete(Model model, @RequestParam("id") int id) {
         Optional<Genero> genero = generoRepo.findById(id);
 
-        if(!genero.isPresent()) {
-            return "redirect:/genero/list";
-        }
+        if(genero.isPresent()) {
 
-        model.addAttribute("genero", genero.get());
-        return "deleteGenero";
+            model.addAttribute("genero", genero.get());
+            return "deleteGenero";
+        }
+        return "redirect:/genero/list";
+
+       
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
