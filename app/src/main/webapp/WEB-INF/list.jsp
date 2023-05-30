@@ -26,6 +26,7 @@
                         <td>${item.id}</td>
                         <td>${item.titulo}</td>
                         <td>${item.isbn}</td>
+                        <td>${item.genero.nome}</td>
                        
                         <td>
                             <a href="/livro/update?id=${item.id}" class="btn btn-warning">Editar</a>
