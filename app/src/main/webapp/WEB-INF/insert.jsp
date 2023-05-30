@@ -17,12 +17,13 @@
                     <input type="text" name="titulo" class="form-control" />
                     <label for="isbn">Isbn</label>
                     <input type="text" name="isbn" class="form-control">
+                    
                 </div>
                 <div class="form-group">
                     <label for="genero">Genero</label>
                     <select class="form-control" name="genero">
                         <c:forEach var="item" items="${generos}">
-                            <option>${item.nome}</option>
+                            <option ${livro.genero.id == item.id ? "selected" : ""} value="${item.id}">${item.nome}</option>
                         </c:forEach>
                     </select>
                 </div>
