@@ -4,8 +4,8 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Novo</title>
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <title>Novo Livro</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
@@ -15,15 +15,16 @@
                 <div class="form-group">
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" class="form-control" />
-                    <label for="isbn">Isbn</label>
-                    <input type="text" name="isbn" class="form-control">
-                    
                 </div>
                 <div class="form-group">
-                    <label for="genero">Genero</label>
+                    <label for="isbn">ISBN</label>
+                    <input type="text" name="isbn" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="genero">Gênero</label>
                     <select class="form-control" name="genero">
                         <c:forEach var="item" items="${generos}">
-                            <option ${livro.genero.id == item.id ? "selected" : ""} value="${item.id}">${item.nome}</option>
+                            <option value="${item.id}">${item.nome}</option>
                         </c:forEach>
                     </select>
                 </div>
