@@ -20,6 +20,7 @@ public class LivroController {
 
     @Autowired
     private LivroRepository livroRepo;
+
     @Autowired
     private GeneroRepository generoRepo;
 
@@ -39,13 +40,14 @@ public class LivroController {
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("isbn") String isbn,
-        @RequestParam("genero") int id_genero
-    ) {
-        Optional <Genero> genero = generoRepo.findById(id_genero);
+        @RequestParam("genero") int id_genero) {
+        Optional<Genero> genero = generoRepo.findById(id_genero);
+
         Livro livro = new Livro();
         livro.setTitulo(titulo);
         livro.setIsbn(isbn);
-        livro.setGenero(genero);
+        livro.setGenero(genero.get());
+        
 
         livroRepo.save(livro);
 
@@ -60,6 +62,7 @@ public class LivroController {
             return "redirect:/livro/list";
         }
 
+        model.addAttribute("generos", generoRepo.findAll());
         model.addAttribute("livro", livro.get());
         return "update";
     }
@@ -78,7 +81,7 @@ public class LivroController {
 
         livro.get().setTitulo(titulo);
         livro.get().setIsbn(isbn);
-        livro.get().setGenero(id_genero);
+        livro.get().setGenero(generoRepo.findById(id_genero).get());
 
         livroRepo.save(livro.get());
         return "redirect:/livro/list";
